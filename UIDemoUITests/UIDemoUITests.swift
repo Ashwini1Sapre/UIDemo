@@ -15,9 +15,18 @@ class UIDemoUITests: XCTestCase {
         // In UI tests it is usually best to stop immediately when a failure occurs.
         continueAfterFailure = false
 
+        XCUIApplication().launch()
         // In UI tests it’s important to set the initial state - such as interface orientation - required for your tests before they run. The setUp method is a good place to do this.
     }
-
+    
+    func testbuttonclick()
+    {
+        let action = XCUIApplication()
+                action.buttons["Bookmark"].tap()
+        
+        XCTAssert(action.staticTexts["Update Meeee"].exists)
+        
+    }
     override func tearDownWithError() throws {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
